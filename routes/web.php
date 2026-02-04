@@ -12,6 +12,10 @@ Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'index
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::get('/reports/export', [App\Http\Controllers\ReportController::class, 'export'])
+    ->middleware(['auth', 'verified'])
+    ->name('reports.export');
+
 // Machine Management Routes
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('machines', App\Http\Controllers\MachineController::class);

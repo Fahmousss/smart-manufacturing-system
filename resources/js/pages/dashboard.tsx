@@ -16,7 +16,8 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-import { Activity, Thermometer, Package, TrendingUp } from 'lucide-react';
+import { Activity, Thermometer, Package, TrendingUp, Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 declare global {
     interface Window {
@@ -166,10 +167,18 @@ export default function Dashboard({
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     {/* Header */}
                     <div className="mb-6">
-                        <h2 className="text-3xl font-bold">
-                            Production Monitoring
-                        </h2>
-                        <p className="text-muted-foreground">
+                        <div className="flex justify-between items-center">
+                            <h2 className="text-3xl font-bold">
+                                Production Monitoring
+                            </h2>
+                            <Button asChild>
+                                <a href="/reports/export" target="_blank" rel="noopener noreferrer">
+                                    <Download className="mr-2 h-4 w-4" />
+                                    Export Report
+                                </a>
+                            </Button>
+                        </div>
+                        <p className="text-muted-foreground mt-1">
                             Real-time machine status and production data
                         </p>
                     </div>
