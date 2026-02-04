@@ -236,7 +236,7 @@ export default function Dashboard({
                             </CardHeader>
                             <CardContent>
                                 <div className="text-xl font-bold">
-                                    {stats.avg_temperature}°C
+                                    {stats.avg_temperature.toFixed(2)}°C
                                 </div>
                                 <p className="text-xs text-muted-foreground">
                                     Across all machines
