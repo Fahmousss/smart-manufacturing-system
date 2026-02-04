@@ -14,4 +14,9 @@ Route::get('dashboard', function () {
     return Inertia::render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/settings.php';
+// Machine Management Routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('machines', App\Http\Controllers\MachineController::class);
+});
+
+require __DIR__ . '/settings.php';
