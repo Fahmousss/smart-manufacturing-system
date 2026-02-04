@@ -105,10 +105,9 @@ Anda perlu menjalankan beberapa terminal secara bersamaan agar sistem berjalan p
 
 Buka browser dan kunjungi `http://localhost:8000` (atau URL Herd Anda) untuk melihat aplikasi.
 
-## 🧪 Menjalankan Tes
-
-Proyek ini dilengkapi dengan suite pengujian otomatis menggunakan Pest.
+## Autentikasi
 
 ```bash
-php artisan test
+email: test@example.com
+pass : password
 ```
