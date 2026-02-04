@@ -17,7 +17,9 @@ class OperatorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'employee_id' => 'EMP' . fake()->unique()->numberBetween(1000, 9999),
+            'shift_preference' => fake()->randomElement(['morning', 'afternoon', 'night']),
         ];
     }
 }

@@ -56,13 +56,13 @@ export default function Index({ machines }: Props) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+                    <div className="overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6">
                             <div className="mb-6 flex items-center justify-between">
-                                <h2 className="text-2xl font-semibold text-gray-800">
+                                <h2 className="text-2xl font-semibold">
                                     Machines
                                 </h2>
-                                <Link href="/machines/create">
+                                <Link href={MachineController.create().url}>
                                     <Button>
                                         <Plus className="mr-2 h-4 w-4" />
                                         Add Machine
@@ -88,7 +88,7 @@ export default function Index({ machines }: Props) {
                                         <TableRow>
                                             <TableCell
                                                 colSpan={6}
-                                                className="text-center text-gray-500"
+                                                className="text-center"
                                             >
                                                 No machines found. Add your
                                                 first machine to get started.
@@ -122,7 +122,9 @@ export default function Index({ machines }: Props) {
                                                 <TableCell className="text-right">
                                                     <div className="flex justify-end gap-2">
                                                         <Link
-                                                            href={`/machines/${machine.id}/edit`}
+                                                            href={MachineController.edit(
+                                                                machine.id,
+                                                            ).url}
                                                         >
                                                             <Button
                                                                 variant="outline"

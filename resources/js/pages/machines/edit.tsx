@@ -54,15 +54,15 @@ export default function Edit({ machine, operators }: Props) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-2xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+                    <div className="overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6">
                             <div className="mb-6 flex items-center gap-4">
-                                <Link href="/machines">
+                                <Link href={MachineController.index().url}>
                                     <Button variant="outline" size="icon">
                                         <ArrowLeft className="h-4 w-4" />
                                     </Button>
                                 </Link>
-                                <h2 className="text-2xl font-semibold text-gray-800">
+                                <h2 className="text-2xl font-semibold">
                                     Edit Machine: {machine.name}
                                 </h2>
                             </div>
@@ -146,9 +146,6 @@ export default function Edit({ machine, operators }: Props) {
                                             <SelectValue placeholder="Select operator" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="">
-                                                No Operator
-                                            </SelectItem>
                                             {operators.map((operator) => (
                                                 <SelectItem
                                                     key={operator.id}
@@ -172,7 +169,7 @@ export default function Edit({ machine, operators }: Props) {
                                     >
                                         Update Machine
                                     </Button>
-                                    <Link href="/machines">
+                                    <Link href={MachineController.index().url}>
                                         <Button
                                             type="button"
                                             variant="outline"

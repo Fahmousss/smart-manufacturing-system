@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Operator;
 use Illuminate\Database\Seeder;
 
 class OperatorSeeder extends Seeder
@@ -12,6 +12,6 @@ class OperatorSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Operator::factory()->count(10)->create();
     }
 }
