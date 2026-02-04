@@ -82,7 +82,7 @@ Anda perlu menjalankan beberapa terminal secara bersamaan agar sistem berjalan p
 
 1.  **Jalankan Server Laravel** (atau gunakan Laravel Herd/Valet)
     ```bash
-    php artisan serve
+    composer run dev
     ```
 
 2.  **Jalankan Server WebSocket (Reverb)**

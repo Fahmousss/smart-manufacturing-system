@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('mqtt_topic_id')->unique();
             $table->timestamps();
 
+
             $table->index('status');
             $table->index('type');
         });
