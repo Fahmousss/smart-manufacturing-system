@@ -79,8 +79,6 @@ BEGIN
     SET status = p_status, updated_at = NOW()
     WHERE id = p_machine_id;
     
-    -- TODO: Track downtime when status changes to 'offline' or 'maintenance'
-    -- This can be implemented later with a downtime_logs table if needed
     
     RETURN QUERY SELECT v_previous_status, TRUE;
     
