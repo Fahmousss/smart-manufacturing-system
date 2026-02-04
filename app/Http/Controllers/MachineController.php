@@ -54,6 +54,32 @@ class MachineController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function show(Machine $machine): InertiaResponse
+    {
+        // Get recent production logs
+        $productionLogs = \DB::table('production_data')
+            ->where('machine_id', $machine->id)
+            ->orderBy('recorded_at', 'desc')
+            ->limit(20)
+            ->get();
+
+        // Get recent temperature logs
+        $temperatureLogs = \DB::table('machine_temperature_logs')
+            ->where('machine_id', $machine->id)
+            ->orderBy('recorded_at', 'desc')
+            ->limit(20)
+            ->get();
+
+        return Inertia::render('machines/show', [
+            'machine' => $machine->load('currentOperator'),
+            'production_logs' => $productionLogs,
+            'temperature_logs' => $temperatureLogs,
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Machine $machine): InertiaResponse

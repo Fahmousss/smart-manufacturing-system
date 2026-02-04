@@ -108,7 +108,7 @@ RETURNS TABLE(
 BEGIN
     RETURN QUERY
     SELECT 
-        ps.machine_id,
+        ps.machine_id::BIGINT,
         m.name AS machine_name,
         m.type::VARCHAR(20) AS machine_type,
         ps.total_units,

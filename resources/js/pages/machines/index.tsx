@@ -98,7 +98,12 @@ export default function Index({ machines }: Props) {
                                         machines.map((machine) => (
                                             <TableRow key={machine.id}>
                                                 <TableCell className="font-medium">
-                                                    {machine.name}
+                                                    <Link
+                                                        href={MachineController.show(machine.id).url}
+                                                        className="hover:underline hover:text-primary"
+                                                    >
+                                                        {machine.name}
+                                                    </Link>
                                                 </TableCell>
                                                 <TableCell>
                                                     {machine.type}
